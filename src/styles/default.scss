@@ -46,7 +46,7 @@ $sideMenuWidth: 16.4rem;
 
 .main-inner {
   margin: 0 auto;
-  padding: 10px;
+  padding: 10px 25px;
 }
 
 @media(min-width: $tablet) {
@@ -71,4 +71,9 @@ $sideMenuWidth: 16.4rem;
   main {
     padding-left: $sideMenuWidth;
   }
+
+  .main-inner {
+    margin: 0 auto;
+    padding: 10px 25px;
+  }  
 }
