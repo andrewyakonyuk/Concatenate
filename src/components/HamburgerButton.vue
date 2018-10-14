@@ -8,8 +8,8 @@
 
 <style lang="scss">
   .hamburger-button {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
     position: absolute;
     padding: 0.6rem;
     top: 0.6rem;

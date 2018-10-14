@@ -61,7 +61,7 @@ export default {
     &.is-sticked {
       position: fixed;
       bottom: 0;
-      padding: 0.5rem 5px;
+      padding: 5px;
       z-index: 80;
 
         &:before {

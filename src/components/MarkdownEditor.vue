@@ -122,6 +122,18 @@ export default {
     .cm-variable-3 {
       color: black;
     }
+
+    .cm-tag {
+      color: #800000;
+    }
+
+    .cm-attribute {
+      color: #ff0000;
+    }
+
+    .cm-string {
+      color: #0000ff;
+    }
   }
 
   .CodeMirror-code {

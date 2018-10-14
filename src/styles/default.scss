@@ -1,14 +1,14 @@
 @import './vars';
 @import './bulma.scss';
 
-$sideMenuWidth: 16.4rem;
+$sideMenuWidth: 18.4rem;
 
 .aside-menu {
   text-align: left;
   position: fixed;
   width: $sideMenuWidth;
-  background-color: #f7f9fa;
-  z-index: 10;
+  background-color: hsl(0, 0%, 96%);
+  z-index: 100;
   top: 0;
   padding-top: 3.6rem;
   border-right: 1px solid #eaecef;
@@ -22,7 +22,7 @@ $sideMenuWidth: 16.4rem;
 
 .sidebar-mask {
   position: fixed;
-  z-index: 9;
+  z-index: 90;
   top: 0;
   left: 0;
   width: 100vw;
@@ -73,7 +73,6 @@ $sideMenuWidth: 16.4rem;
   }
 
   .main-inner {
-    margin: 0 auto;
-    padding: 10px 25px;
+    padding: 10px;
   }  
 }

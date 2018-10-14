@@ -7,5 +7,13 @@
 @import "../node_modules/bulma/sass/layout/_all.sass";
 
 .dropdown-trigger {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.menu-list {
+  .button {
+    padding-top: calc(0.375em - 1px);
+    padding-bottom: calc(0.375em - 1px); 
+    text-align: left;
+  }
 }
