@@ -1,61 +1,39 @@
 <template>
   <aside class="menu aside-menu" >
-    <hamburger-button @hamburger-click="$emit('hamburger-click')"></hamburger-button>
-
+    <div class="aside-menu-header">
+      <hamburger-button @hamburger-click="$emit('hamburger-click')"></hamburger-button>
+    </div>
     <ul class="menu-list is-block-mobile" style="display: none">
       <li><router-link active-class="is-active" to="/docs" exact>All</router-link></li>
       <li><router-link active-class="is-active" to="/docs/published">Published</router-link></li>
       <li><router-link active-class="is-active" to="/docs/drafts">Drafts</router-link></li>
       <li><router-link active-class="is-active" to="/docs/deleted">Deleted</router-link></li>
       <li>
-        <router-link to="/docs/new" class="button is-success">
-          New
+        <router-link to="/docs/new" class="button is-success is-outlined is-borderless">
+          <span class="icon is-small">
+            <font-awesome-icon icon="feather-alt"/>
+          </span>
+          <span>New</span>
         </router-link>
       </li>
     </ul>
-
-    <p class="menu-label">
-      General
-    </p>
     <ul class="menu-list">
       <li><router-link active-class="is-active" to="/" exact>Home</router-link></li>
       <li><router-link active-class="is-active" to="/about">About</router-link></li>
     </ul>
-    <p class="menu-label">
-      Administration
-    </p>
-    <ul class="menu-list">
-      <li><a>Team Settings</a></li>
-      <li>
-        <a>Manage Your Team</a>
-        <ul>
-          <li><a>Members</a></li>
-          <li><a>Plugins</a></li>
-          <li><a>Add a member</a></li>
-        </ul>
-      </li>
-      <li><a>Invitations</a></li>
-      <li><a>Cloud Storage Environment Settings</a></li>
-      <li><a>Authentication</a></li>
-    </ul>
-    <p class="menu-label">
-      Transactions
-    </p>
-    <ul class="menu-list">
-      <li><a>Payments</a></li>
-      <li><a>Transfers</a></li>
-      <li><a>Balance</a></li>
-    </ul>
+    <workspace-group></workspace-group>
   </aside>
 </template>
 
 <script>
 import HamburgerButton from '@/components/HamburgerButton.vue';
+import WorkspaceGroup from '@/components/WorkspaceGroup.vue';
 
 export default {
   name: 'Sidebar',
   components: {
     HamburgerButton,
+    WorkspaceGroup,
   },
 };
 </script>

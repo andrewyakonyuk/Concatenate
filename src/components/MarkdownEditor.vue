@@ -83,10 +83,13 @@ export default {
 
   .CodeMirror {
     border: 1px solid #dbdbdb;
+    border-radius: 4px;
     padding: 15px;
     height: auto;
     font-family: inherit;
     min-height: $minEditorHeight;
+    transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
+    background-color: whitesmoke;
 
     .cm-header {
       color: black;

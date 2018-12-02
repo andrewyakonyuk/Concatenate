@@ -1,5 +1,10 @@
 // Import only what you need from Bulma
 @import "../node_modules/bulma/sass/utilities/_all.sass";
+
+// Bulma overrides
+$menu-item-hover-background-color: darken($background, 5%);
+$menu-item-color: whitesmoke;
+
 @import "../node_modules/bulma/sass/base/_all.sass";
 @import "../node_modules/bulma/sass/elements/_all.sass";
 @import "../node_modules/bulma/sass/components/_all.sass";
@@ -11,9 +16,72 @@
 }
 
 .menu-list {
+  a {
+    transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
+  }
+
   .button {
     padding-top: calc(0.375em - 1px);
-    padding-bottom: calc(0.375em - 1px); 
+    padding-bottom: calc(0.375em - 1px);
     text-align: left;
+    width: 100%;
+    display: inline-block;
+  }
+}
+
+.menu-label {
+  margin-top: 1em;
+  margin-bottom: 1rem;
+  margin-left: .75rem;
+
+  &:not(:last-child) {
+    margin-bottom: .25rem;
+  }
+}
+
+.badge {
+  position: absolute;
+  z-index: 2;
+  top: -.5em;
+  left: 110%;
+  margin: 0 0 0 -1.5em !important;
+  text-transform: none;
+  font-weight: 700;
+  padding: .1em .4em;
+  border-radius: .28571429rem;
+  color: white;
+  font-size: .8em;
+  border: 2px solid white;
+
+  &.is-primary {
+    background-color: $primary;
+  }
+
+  &.is-info{
+    background-color: $info;
+  }
+
+  &.is-success {
+    background-color: $success;
+  }
+
+  &.is-warning {
+    background-color: $warning;
+  }
+
+  &.is-danger {
+    background-color: $danger;
+  }
+}
+
+.input, .textarea {
+  transition: background-color .2s ease-in-out, box-shadow .2s ease-in-out;
+}
+
+.button {
+  transition: background-color .2s ease-in-out;
+
+   &.is-borderless.is-outlined {
+    border-color: transparent;
   }
 }

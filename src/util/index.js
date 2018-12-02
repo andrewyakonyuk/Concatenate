@@ -1,5 +1,5 @@
 export default {};
-export function isElementInViewport(elDimensions, bottomOffset) {
+function isElementInViewport(elDimensions, bottomOffset) {
   return (
     elDimensions.top >= 0 &&
     elDimensions.left >= 0 &&
@@ -8,3 +8,9 @@ export function isElementInViewport(elDimensions, bottomOffset) {
     elDimensions.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 }
+
+function generateId() {
+  return Date.now().toString();
+}
+
+export { isElementInViewport, generateId };

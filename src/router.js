@@ -26,5 +26,22 @@ export default new Router({
       name: 'NewDocument',
       component: () => import(/* webpackChunkName: "editor" */ './views/DocumentEdit.vue'),
     },
+    {
+      path: '/collections/:id/new',
+      name: 'new-collection',
+      component: () => import('./views/CollectionPage.vue'),
+      props: true,
+    },
+    {
+      path: '/collections/:collectionId',
+      name: 'collection-page',
+      component: () => import('./views/CollectionPage.vue'),
+      props: true,
+      children: [{
+        path: 'docs/:documentId',
+        component: () => import('./views/DocumentPage.vue'),
+        props: true,
+      }],
+    },
   ],
 });

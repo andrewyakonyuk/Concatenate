@@ -23,11 +23,6 @@ export default {
     MarkdownEditor,
     ButtonGroup,
   },
-  watch: {
-    textValue(newValue) {
-      console.log(newValue);
-    },
-  },
   data() {
     return {
       value: '# input',

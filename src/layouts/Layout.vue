@@ -3,9 +3,6 @@
     :class="{ 'aside-menu-open': isSidebarOpen }"
     @touchstart="onTouchStart"
     @touchend="onTouchEnd">
-    <header class="navbar">
-      <hamburger-button @hamburger-click="toggleSidebar"></hamburger-button>
-    </header>
     <sidebar @hamburger-click="toggleSidebar"></sidebar>
 
     <div
@@ -13,63 +10,48 @@
       @click="toggleSidebar(false)"
     ></div>
 
-    <main id="main" class="container">
-      <div class="main-inner">
-        <nav class="level is-hidden-mobile" style="padding: 10px 0;">
-          <div class="level-right">
-            <div class="level-item">
-              <div class="field has-addons">
-                <p class="control is-expanded">
-                  <input class="input" type="text" placeholder="Find a document">
-                </p>
-                <p class="control">
-                  <button class="button">
-                    Search
-                  </button>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="level-right">
-            <p class="level-item"><strong>All</strong></p>
-            <p class="level-item"><a>Published</a></p>
-            <p class="level-item"><a>Drafts</a></p>
-            <p class="level-item"><a>Deleted</a></p>
-
-            <p class="level-item">
-              <router-link to="/docs/new" class="button is-success">
-                New
-              </router-link>
+    <main id="main">
+      <header class="app-header">
+        <hamburger-button @hamburger-click="toggleSidebar"></hamburger-button>
+        <div class="search-box boxed">
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" type="search" placeholder="Find a document">
+              <span class="icon is-small is-left">
+                <font-awesome-icon icon="search" />
+              </span>
             </p>
           </div>
-
-          <div class="level-right">
-            <div class="level-item">
-              <bulma-dropdown class="is-right">
-                <template slot="trigger">
-                  <figure class="image is-32x32">
-                    <img src="https://avatars0.githubusercontent.com/u/1595380?s=40&amp;v=4">
-                  </figure>
-                  <notification-indicator></notification-indicator>
-                </template>
-                <template slot="content">
-                  <div class="dropdown-item">
-                    <p>You can insert <strong>any type of content</strong> within the dropdown menu.</p>
-                  </div>
-                  <hr class="dropdown-divider">
-                  <div class="dropdown-item">
-                    <p>You simply need to use a <code>&lt;div&gt;</code> instead.</p>
-                  </div>
-                  <hr class="dropdown-divider">
-                  <a href="#" class="dropdown-item">
-                    This is a link
-                  </a>
-                </template>
-              </bulma-dropdown>
+        </div>
+        <router-link to="/docs/new" class="new-document boxed button is-success">
+          <span class="icon is-small is-left">
+            <font-awesome-icon icon="plus-circle" />
+          </span>
+          <span>New</span>
+        </router-link>
+        <bulma-dropdown class="user-info boxed is-right">
+          <template slot="trigger">
+            <figure class="image is-32x32">
+              <img src="https://avatars0.githubusercontent.com/u/1595380?s=40&amp;v=4">
+            </figure>
+            <notification-indicator></notification-indicator>
+          </template>
+          <template slot="content">
+            <div class="dropdown-item">
+              <p>You can insert <strong>any type of content</strong> within the dropdown menu.</p>
             </div>
-          </div>
-        </nav>
+            <hr class="dropdown-divider">
+            <div class="dropdown-item">
+              <p>You simply need to use a <code>&lt;div&gt;</code> instead.</p>
+            </div>
+            <hr class="dropdown-divider">
+            <a href="#" class="dropdown-item">
+              This is a link
+            </a>
+          </template>
+        </bulma-dropdown>
+      </header>
+      <div class="main-content">
         <router-view/>
       </div>
     </main>
