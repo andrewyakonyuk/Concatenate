@@ -37,7 +37,7 @@ router.beforeResolve((to, from, next) => {
     return next();
   }
 
-  progressBar.start();
+  progressBar.startAfter(200);
   return Promise.all(asyncDataHooks.map(hook => hook({ store, route: to, progressBar })))
     .then(() => {
       progressBar.finish();

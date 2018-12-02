@@ -37,6 +37,14 @@ export default {
       }, 100);
       return this;
     },
+    startAfter(delay) {
+      const self = this;
+      this.delayTimeout = setTimeout(() => {
+        if (self.delayTimeout == null) return;
+        self.delayTimeout = null;
+        self.start();
+      }, delay);
+    },
     set(num) {
       this.show = true;
       this.canSuccess = true;
@@ -65,7 +73,9 @@ export default {
     },
     hide() {
       clearInterval(this.timer);
+      clearInterval(this.delayTimeout);
       this.timer = null;
+      this.delayTimeout = null;
       setTimeout(() => {
         this.show = false;
         this.$nextTick(() => {
