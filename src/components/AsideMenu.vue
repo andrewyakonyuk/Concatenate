@@ -1,8 +1,6 @@
 <template>
   <aside class="menu aside-menu" >
-    <div class="aside-menu-header">
-      <hamburger-button @hamburger-click="$emit('hamburger-click')"></hamburger-button>
-    </div>
+    <hamburger-button @hb-click="toggleDrawer" />
     <ul class="menu-list is-block-mobile" style="display: none">
       <li><router-link active-class="is-active" to="/docs" exact>All</router-link></li>
       <li><router-link active-class="is-active" to="/docs/published">Published</router-link></li>
@@ -30,14 +28,72 @@ import HamburgerButton from '@/components/HamburgerButton.vue';
 import WorkspaceGroup from '@/components/WorkspaceGroup.vue';
 
 export default {
-  name: 'Sidebar',
+  name: 'AsideMenu',
   components: {
     HamburgerButton,
     WorkspaceGroup,
   },
+  methods: {
+    toggleDrawer(to) {
+      this.$store.commit({
+        type: 'toggleDrawer',
+        to,
+      });
+    },
+  },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@import "@/styles/bulma.scss";
+
+.aside-menu {
+  text-align: left;
+  background-color: #363636;
+  border-right: 1px solid #eaecef;
+  overflow-y: auto;
+  padding-left: 0.8rem;
+  color: whitesmoke;
+  min-height: 100vh;
+
+  .button {
+    border-radius: 2px 0 0 2px;
+  }
+
+  .hamburger-button {
+    margin-top: .4rem;
+  }
+
+  .menu-list {
+    a {
+      transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
+      border-radius: 2px 0 0 2px;
+    }
+
+    .button {
+      padding-top: calc(0.375em - 1px);
+      padding-bottom: calc(0.375em - 1px);
+      text-align: left;
+      width: 100%;
+      display: inline-block;
+    }
+  }
+
+  .menu-label {
+    margin-top: 1em;
+    margin-bottom: 1rem;
+    margin-left: .75rem;
+
+    &:not(:last-child) {
+      margin-bottom: .25rem;
+    }
+  }
+}
+
+@media(min-width: $tablet) {
+  .aside-menu {
+    padding-top: 0.8rem;
+  }
+}
 
 </style>

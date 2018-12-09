@@ -8,6 +8,9 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    drawer: {
+      isOpen: false,
+    },
     collections: [{
       id: generateId() + 1,
       title: 'Team Settings',
@@ -40,6 +43,10 @@ export default new Vuex.Store({
       if (collection) {
         collection.title = payload.title;
       }
+    },
+    toggleDrawer(state, payload) {
+      // eslint-disable-next-line no-param-reassign
+      state.drawer.isOpen = typeof to === 'boolean' ? payload.to : !this.state.drawer.isOpen;
     },
   },
   actions: {

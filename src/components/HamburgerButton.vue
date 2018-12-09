@@ -1,7 +1,7 @@
 <template>
   <div
     class="hamburger-button"
-    @click="$emit('hamburger-click')">
+    @click="$emit('hb-click')">
     <svg
       class="icon"
       xmlns="http://www.w3.org/2000/svg"
