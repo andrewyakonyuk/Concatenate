@@ -36,7 +36,7 @@ export default {
   methods: {
     toggleDrawer(to) {
       this.$store.commit({
-        type: 'toggleDrawer',
+        type: 'ui/toggleDrawer',
         to,
       });
     },
@@ -93,6 +93,10 @@ export default {
 @media(min-width: $tablet) {
   .aside-menu {
     padding-top: 0.8rem;
+
+     .hamburger-button {
+       display: none;
+     }
   }
 }
 

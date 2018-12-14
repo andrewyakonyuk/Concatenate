@@ -3,14 +3,18 @@ import Vuex from 'vuex';
 import { generateId } from '@/util';
 import router from '@/router';
 import _ from 'underscore';
+import ui from './modules/ui';
 
 Vue.use(Vuex);
 
+const debug = process.env.NODE_ENV !== 'production';
+
 export default new Vuex.Store({
+  strict: debug,
+  modules: {
+    ui,
+  },
   state: {
-    drawer: {
-      isOpen: false,
-    },
     collections: [{
       id: generateId() + 1,
       title: 'Team Settings',
@@ -29,7 +33,7 @@ export default new Vuex.Store({
     }],
   },
   getters: {
-    collectionById: state => id => _.find(state.collections, item => item.id === id),
+    getCollectionById: state => id => _.find(state.collections, item => item.id === id),
   },
   mutations: {
     addNewCollection(state, payload) {
@@ -44,16 +48,11 @@ export default new Vuex.Store({
         collection.title = payload.title;
       }
     },
-    toggleDrawer(state, payload) {
-      // eslint-disable-next-line no-param-reassign
-      state.drawer.isOpen = typeof to === 'boolean' ? payload.to : !this.state.drawer.isOpen;
-    },
   },
   actions: {
     addNewCollection({ commit }) {
       const newId = generateId();
-      commit('addNewCollection', { id: newId });
-      router.push({ name: 'new-collection', params: { collectionId: newId } });
+      commit('ui/togglePanel', { to: true });
     },
   },
 });

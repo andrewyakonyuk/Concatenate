@@ -1,7 +1,7 @@
 <template>
   <div
     class="drawer"
-    :class="{ 'is-open': isDrawerOpen }"
+    :class="{ 'drawer-is-open': isDrawerOpen }"
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
@@ -28,13 +28,13 @@ export default {
   },
   computed: {
     isDrawerOpen() {
-      return this.$store.state.drawer.isOpen;
+      return this.$store.state.ui.drawer.isOpen;
     },
   },
   methods: {
     toggleDrawer(to) {
       this.$store.commit({
-        type: 'toggleDrawer',
+        type: 'ui/toggleDrawer',
         to,
       });
     },
@@ -61,7 +61,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   @import '@/styles/bulma.scss';
   $drawerMenuWidth: 18rem;
 
@@ -91,7 +91,7 @@ export default {
     display: none;
   }
 
-  .drawer.is-open {
+  .drawer-is-open {
     .drawer-menu {
       transform: translateX(0);
     }
@@ -111,7 +111,6 @@ export default {
     }
 
     .drawer-menu {
-      z-index: inherit;
       transform: translateX(0);
     }
 

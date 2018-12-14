@@ -60,4 +60,9 @@ $menu-item-color: whitesmoke;
    &.is-borderless.is-outlined {
     border-color: transparent;
   }
+
+  &.is-icon {
+    border-color: transparent;
+    background-color: transparent;
+  }
 }

@@ -5,10 +5,13 @@
         <aside-menu />
       </template>
       <template slot="content">
-        <app-header />
-        <main>
-          <router-view />
-        </main>
+        <aside-panel />
+        <div>
+          <app-header />
+          <main>
+            <router-view />
+          </main>
+        </div>
       </template>
     </drawer>
   </div>
@@ -17,6 +20,7 @@
 <script>
 import Drawer from '@/components/Drawer.vue';
 import AsideMenu from '@/components/AsideMenu.vue';
+import AsidePanel from '@/components/AsidePanel.vue';
 import HamburgerButton from '@/components/HamburgerButton.vue';
 import AppHeader from '@/components/AppHeader.vue';
 
@@ -26,6 +30,7 @@ export default {
     Drawer,
     AppHeader,
     AsideMenu,
+    AsidePanel,
     HamburgerButton,
   },
 };
