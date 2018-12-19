@@ -67,7 +67,7 @@ export default {
   .menu-list {
     a {
       transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
-      border-radius: 2px 0 0 2px;
+      border-radius: 4px 0 0 4px;
     }
 
     .button {

@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
+import DocumentNone from './views/DocumentNone.vue';
 
 Vue.use(Router);
 
@@ -27,21 +28,27 @@ export default new Router({
       component: () => import(/* webpackChunkName: "editor" */ './views/DocumentEdit.vue'),
     },
     {
-      path: '/collections/:id/new',
+      path: '/collections/:collectionId/new',
       name: 'new-collection',
       component: () => import('./views/CollectionPage.vue'),
       props: true,
     },
     {
       path: '/collections/:collectionId',
-      name: 'collection-page',
       component: () => import('./views/CollectionPage.vue'),
       props: true,
-      children: [{
-        path: 'docs/:documentId',
-        component: () => import('./views/DocumentPage.vue'),
-        props: true,
-      }],
+      children: [
+        {
+          path: '',
+          component: DocumentNone,
+          name: 'collection-page',
+        },
+        {
+          path: 'docs/:documentId',
+          name: 'document-page',
+          component: () => import('./views/DocumentPage.vue'),
+          props: true,
+        }],
     },
   ],
 });

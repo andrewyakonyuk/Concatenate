@@ -2,14 +2,9 @@
   <header class="app-header">
     <hamburger-button @hb-click="toggleDrawer"></hamburger-button>
     <div class="search-box boxed">
-      <div class="field">
-        <p class="control has-icons-left">
-          <input class="input" type="search" placeholder="Find a document">
-          <span class="icon is-small is-left">
-            <font-awesome-icon icon="search" />
-          </span>
-        </p>
-      </div>
+      <p class="control">
+        <input class="search-input input" type="search" placeholder="Find a document">
+      </p>
     </div>
     <router-link to="/docs/new" class="new-document boxed button is-success">
       <span class="icon is-small is-left">
@@ -56,7 +51,7 @@ export default {
   methods: {
     toggleDrawer(to) {
       this.$store.commit({
-        type: 'toggleDrawer',
+        type: 'ui/toggleDrawer',
         to,
       });
     },
@@ -77,13 +72,19 @@ export default {
   }
 
   .search-box {
-    display: block;
     flex-basis: 0;
     flex-grow: 1;
     flex-shrink: 1;
+    justify-content: center;
 
-    .field input {
+    .control {
+      display: flex;
+      justify-content: center;
+    }
+
+    .search-input {
       background-color: whitesmoke;
+      padding: 0 1.5em;
 
       &:focus, &:active {
         background-color: transparent;
@@ -112,6 +113,10 @@ export default {
 
   .app-actions {
     display: block;
+  }
+
+  .search-input {
+      max-width: 380px;
   }
 }
 

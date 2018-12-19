@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import { generateId } from '@/util';
-import router from '@/router';
 import _ from 'underscore';
 import ui from './modules/ui';
 
@@ -51,7 +50,6 @@ export default new Vuex.Store({
   },
   actions: {
     addNewCollection({ commit }) {
-      const newId = generateId();
       commit('ui/togglePanel', { to: true });
     },
   },
