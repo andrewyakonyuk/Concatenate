@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/Concatenate/precache-manifest.fa37f6fcf792d9fdbba48dc9a6184fe2.js"
+  "/Concatenate/precache-manifest.e680ee51c4871f2cf3aeb3a38c897a43.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "Concatenate"});

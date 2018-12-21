@@ -1,5 +1,7 @@
 # GraphQL
 
+:tada: :100:
+
 The GraphQL specification is edited in the markdown files found in [`/spec`](./spec)
 the latest release of which is published at https://facebook.github.io/graphql/.
 
@@ -11,6 +13,20 @@ match their [release tag](https://github.com/facebook/graphql/releases). For
 example, https://facebook.github.io/graphql/October2016/. If you are linking
 directly to the GraphQL specification, it's best to link to a tagged permalink
 for the particular referenced version.
+
+[[toc]]
+
+::: tip
+This is a tip
+:::
+
+::: warning
+This is a warning
+:::
+
+::: danger
+This is a dangerous warning
+:::
 
 ## Overview
 
@@ -80,7 +96,7 @@ objects an ID that can be used to refetch the object. So let's add
 that to our Human type. We'll also add a string for their home
 planet.
 
-```graphql
+```graphql{2}
 type Human {
   id: String
   name: String
