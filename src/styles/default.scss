@@ -1,2 +1,13 @@
 @import './vars';
 @import './bulma.scss';
+
+.code-snippet {
+  .number {
+    height: inherit;
+    font-size: inherit;
+    background-color: transparent;
+    padding: inherit;
+    margin: inherit;
+    min-width: auto;
+  }
+}

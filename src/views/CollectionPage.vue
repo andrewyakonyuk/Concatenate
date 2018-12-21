@@ -51,6 +51,10 @@ export default {
           title: 'graphql',
         },
         {
+          id: 'releasenotes',
+          title: 'release notes',
+        },
+        {
           id: '4',
           title: 'jgthms.github.io',
         },
