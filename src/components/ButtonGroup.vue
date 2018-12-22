@@ -1,6 +1,6 @@
 <template>
   <div class="buttons-group" ref="group">
-    <div class="buttons is-right" ref="buttons">
+    <div class="buttons" ref="buttons">
       <slot></slot>
     </div>
   </div>
@@ -9,7 +9,6 @@
 <script>
 import { isElementInViewport } from '@/util';
 import _ from 'underscore';
-
 
 export default {
   name: 'ButtonGroup',
