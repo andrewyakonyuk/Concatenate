@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     togglePanel(to) {
-      this.$store.commit({
+      this.$store.dispatch({
         type: 'ui/togglePanel',
         to,
       });

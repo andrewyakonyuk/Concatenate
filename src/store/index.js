@@ -49,8 +49,8 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    addNewCollection({ commit }) {
-      commit('ui/togglePanel', { to: true });
+    addNewCollection({ dispatch }) {
+      dispatch('ui/togglePanel', { to: true });
     },
   },
 });

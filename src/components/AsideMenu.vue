@@ -33,9 +33,14 @@ export default {
     HamburgerButton,
     WorkspaceGroup,
   },
+  watch: {
+    $route() {
+      this.toggleDrawer(false);
+    },
+  },
   methods: {
     toggleDrawer(to) {
-      this.$store.commit({
+      this.$store.dispatch({
         type: 'ui/toggleDrawer',
         to,
       });

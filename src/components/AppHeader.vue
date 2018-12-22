@@ -50,7 +50,7 @@ export default {
   },
   methods: {
     toggleDrawer(to) {
-      this.$store.commit({
+      this.$store.dispatch({
         type: 'ui/toggleDrawer',
         to,
       });
